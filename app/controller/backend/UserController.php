@@ -110,7 +110,7 @@ class UserController extends \core\Controller
    		} else {
    			//用户登录 失败
    			$_SESSION['loginFlag'] = false;
-   			$this->redirect('index.php?p=index.php&c=User&a=login', '登录失败');
+   			$this->redirect('index.php?p=backend&c=Index&a=index', '登录失败');
    		}
    	} else {
    		$this->loadHtml('user/login');

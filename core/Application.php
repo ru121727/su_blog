@@ -3,6 +3,7 @@ namespace core;
 
 class Application
 {
+
 	public static $config;
 	public static function run()
 	{

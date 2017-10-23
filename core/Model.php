@@ -7,7 +7,7 @@ class Model extends \vendor\PDOWrapper
     public function __construct()
     {
     	//要想获得其他文件的数据，首先的加载进来（不是类，就不用名字空间）
-    	require CONFIG_PATH . DS . 'config.php';
+    //	require CONFIG_PATH . DS . 'config.php';
     	parent::__construct(Application::$config['database']);
     }
 
@@ -24,7 +24,7 @@ class Model extends \vendor\PDOWrapper
         if($limit !== false) {
             $sql .= " LIMIT {$offset}, {$limit}";
         }
-     // echo $sql;die;
+     //echo $sql;die;
     return $this->getAll($sql);
   }
  /* public function findAll($where = '2 > 1')
@@ -100,6 +100,7 @@ public function deleteById($id)
 	{
     if(!$modelClassName) {
       $modelClassName = get_called_class();
+      
     }
    
     static $models = array();

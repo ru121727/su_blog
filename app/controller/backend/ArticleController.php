@@ -9,7 +9,7 @@ use vendor\Pager;
 class ArticleController extends Controller
 {
 	public function add()
-	{
+	{//var_dump($_POST);die;
 		if($_POST){
 			//var_dump($_POST);die;
 			//接收提交的数据
