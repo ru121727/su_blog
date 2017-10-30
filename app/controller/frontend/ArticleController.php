@@ -19,7 +19,7 @@ class ArticleController extends Controller
 	}
 
 	public function detail()
-	{var_dump(ArticleModel::create()->findAll());die;
+	{//var_dump(ArticleModel::create()->findAll());die;
 		$id = $_GET['article_id'];
 		$article = ArticleModel::create()->getOneWithJoin($id);
 		//给文章id的阅读书增加一
