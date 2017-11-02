@@ -1,6 +1,7 @@
 <?php
 namespace core;
 
+
 class Application
 {
 
@@ -14,10 +15,11 @@ class Application
 		self::_initialCharset();
 		//设定php的错误显示和级别
 		self::_setPhpErrorDisplayAndErrorReport();
-		//自动加载
-		self::_registerAutoload();
 		//定义目录常量
 		self::_defineDirConst();
+		//自动加载
+		self::_registerAutoload();
+		
 
 		//加载配置文件
 		self::_loadConfigFile();
@@ -51,6 +53,7 @@ class Application
 		spl_autoload_register(function($classname) {
 
         $fileName = ROOT_PATH . DS . str_replace('\\','/',$classname).'.php';
+
         if (is_file($fileName)) {
         	require $fileName;
         }
@@ -103,7 +106,7 @@ class Application
 	//分发路由
 
 	protected static function _dispatchRoute()
-   {
+    {
 
     
    	$a = ACTION;
@@ -111,7 +114,7 @@ class Application
    	$c = '\\app\\controller\\'.PLATFORM.'\\'.CONTROLLER.'controller';
     $ctrl = new $c();
    	$ctrl->$a();
-   }
+    }
 
 }
 
